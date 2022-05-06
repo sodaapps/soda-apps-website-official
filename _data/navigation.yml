@@ -1,8 +1,8 @@
 #Please use the main menu items under the "text"
 - text: About Us
   url: /about
-- text: Services
-  url: /services
+# - text: Services
+#   url: /services
 # - text: Portfolios 
 #   url: /portfolios
 # - text: Blog
