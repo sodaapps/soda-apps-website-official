@@ -1,0 +1,28 @@
+---
+layout: default
+title: "Blog Page"
+page_header_image: "/assets/images/page_header_3.jpg"
+permalink: "/blog/"
+pagination:
+  enabled: true
+---
+
+{% include page_header.html %}
+
+<!-- Start deneb_blog section -->
+<section class="blog_wrapper blog_v2 section_padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8">
+				<div class="blog_wrap_content">
+                  {% include posts_loop.html %}
+                  {% include pagination.html %}
+			   </div>
+			</div>
+			<div class="col-lg-4">
+             {% include sidebar.html %}
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Start deneb_blog section -->

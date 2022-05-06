@@ -1,0 +1,60 @@
+<!-- Start header_area -->
+<header class="header_area header_v1 transparent_header">
+	<div class="container">
+		<div class="site_menu">
+			<div class="row align-items-center">
+				<div class="col-lg-2">
+					<div class="brand">
+					  <a href="{{site.url}}" class="logo"><img src="{{site.site_logo}}" class="img-fluid" alt="{{site.title}}"/></a>
+					</div>
+				</div>
+				<div class="col-lg-10">
+					<div class="primary_menu" id="menu">
+                       {% include navigation.html %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mobile_wrapper">
+			<div class="mobile_header">
+				<div class="row align-items-center">
+					<div class="col-6">
+						<div class="brand_logo">
+							<a href="{{site.url}}"><img src="{{site.site_logo}}" class="img-fluid" alt="{{site.title}}"/></a>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="menu_button">
+							<div class="menu_icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sidenav_menu">
+				<div class="close_icon">
+					<a href="#" class="close_btn"><i class="fas fa-times"></i></a>
+				</div>
+				<ul class="sidebar-menu">
+					<li class="menu-item"><a href="{{site.url}}">Home</a></li>
+                    {% for menu in site.data.navigation %}
+					<li class="menu-item"><a href="{{menu.url}}">{{menu.text}}</a>
+						{% if menu.submenu %}
+						<ul class="sub-menu">
+						   {% for submenu_item in menu.submenu %}
+							 <li><a href="{{submenu_item.url}}">{{submenu_item.text}}</a></li>
+						   {% endfor %}
+						</ul>
+						{% endif %}
+					</li>
+					{% endfor %}
+					<li class="menu-item"><a href="contact.html" class="deneb_btn">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- End header_area -->

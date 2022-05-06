@@ -1,0 +1,33 @@
+<!-- Start deneb_service section -->
+<section class="deneb_service service_v1">
+	<div class="shape_v2">
+		<img src="{{relative_url}}/assets/images/shape/shape_7.png" class="shape_7" alt="">
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section_title text-center">
+					<h2>Our Services</h2>
+					<!-- <p>When unknow printer took a gallery of type and scramblted it to make a type specimen book</p> -->
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			{% for service in site.services %}
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="grid_item wow fadeInUp">
+					<div class="icon">
+						<img src="{{service.icon}}" class="img-fluid" alt="">
+					</div>
+					<div class="info">
+						<h4>{{service.title}}</h4>
+						<p>{{service.description}}</p>
+						<!-- <a href="{{service.url}}" class="link_btn">Read More</a> -->
+					</div>
+				</div>
+			</div>
+            {% endfor %}
+		</div>
+	</div>
+</section>
+<!-- End deneb_service section -->

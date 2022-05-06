@@ -1,0 +1,17 @@
+<nav class="main_menu">
+    <ul>
+	  <li class="menu-item {% if page.url == '/' %} active_link {% endif %}"><a href="{{site.url}}">Home</a></li>
+      {% for menu in site.data.navigation %}
+      <li class="menu-item {% if page.url contains menu.url %} active_link {% endif %}"><a href="{{menu.url}}">{{menu.text}}</a>
+       {% if menu.submenu %}
+		<ul class="sub-menu">
+			{% for submenu_item in menu.submenu %}
+			<li class="menu-item"><a href="{{submenu_item.url}}">{{submenu_item.text}}</a></li>
+			{% endfor %}
+		</ul>
+		</li>
+       {% endif %}
+      {% endfor %}
+      <li class="menu-item"><a href="contact" class="deneb_btn">Contact Us</a></li>
+    </ul>
+</nav>

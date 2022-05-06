@@ -1,0 +1,17 @@
+#Please use the main menu items under the "text"
+- text: About Us
+  url: /about
+- text: Services
+  url: /services
+# - text: Portfolios 
+#   url: /portfolios
+# - text: Blog
+#   url: /blog
+  submenu:
+  - text: Blog Details
+    url: /wordpress-hosting
+  - text: 404
+    url: /404
+# - text: Contact Us
+#   url: /contact
+ 

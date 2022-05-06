@@ -1,0 +1,37 @@
+<!-- Start deneb_blog section -->
+<section class="deneb_blog blog_v1">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section_title text-center">
+					<h2>Latest Blog</h2>
+					<p>When unknow printer took a gallery of type and scramblted it to make a type specimen book</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+		  {% for post in site.posts limit: "3" %}
+			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="grid_item wow fadeInUp">
+                 <article>
+                 	{% if post.post_image %}
+                 	<div class="deneb_img">
+                 		<figure>
+                 			<a href="{{post.url}}"><img src="{{post.post_image}}" class="img-fluid" alt="{{post.title}}"/></a>
+                 		</figure>
+					</div>
+					{% endif %}
+					<div class="deneb_info">
+						<time class="date">{{post.date | date_to_long_string }}</time>
+						<h3><a href="{{post.url}}">{{post.title}}</a></h3>
+						<p>{{post.content | strip_html | truncatewords: "25" }}</p>
+						<a href="{{post.url}}" class="link_btn">Read More</a>
+					</div>
+                 </article>
+				</div>
+			</div>
+           {% endfor %}
+		</div>
+	</div>
+</section>
+<!-- End deneb_blog section -->

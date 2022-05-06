@@ -1,0 +1,67 @@
+---
+layout: default
+title: Category Page
+pagination:
+  enabled: true
+---
+
+<!-- Start deneb_breadcrumb section -->
+<section class="deneb_breadcrumb bg_image" style="background-image: url({% if page.page_header_image %} {{page.page_header_image}} {% else %} {{site.hero_image}} {% endif %});">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="breadcrumb_content">
+					<h1>{{page.title | capitalize }}</h1>
+					<ul class="mt-3">
+						<li><a href="{{site.url}}">Home</a></li>
+						<li>{{page.title}}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End deneb_breadcrumb section -->
+
+<!-- Start deneb_blog section -->
+<section class="blog_wrapper blog_v2 section-padding-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="blog_wrap_content">
+			<div class="blog-posts-wrapper row">
+			{% for post in page.posts %}
+             <div class="col-md-6">
+             	<div class="grid_item">
+				<div class="deneb_img">
+					<a href="{{post.url}}"><img src="{{post.post_image}}" class="img-fluid" alt="{{post.title}}"/></a>
+				</div>
+				<div class="deneb_info">
+					<div class="post_meta">
+						<ul>
+							<li><i class="fas fa-clock"></i>{{post.date | date_to_long_string }}</li>
+							{% if post.author %}
+							<li><i class="fas fa-user"></i>By {{post.author}}</li>
+							{% endif %}
+						</ul>
+						<ul>
+						  <li><i class="fas fa-comment"></i><a href="{{post.url}}#disqus_thread" data-disqus-identifier="{{post.id}}">0</a></li>
+						</ul>
+					</div>
+					<h3 class="title"><a href="{{post.url}}">{{post.title}}</a></h3>
+					<p>{{post.content | strip_html | truncatewords:"45" }}</p>
+					<div class="read-more-with-share d-flex justify-content-between">
+						<a href="{{post.url}}" class="post_btn link_btn">Read More</a>
+						{% include social_share.html %}
+					</div>
+				</div>
+			 </div>
+             </div>
+			{% endfor %}
+			</div>
+         </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Start deneb_blog section -->
