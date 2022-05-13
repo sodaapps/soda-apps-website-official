@@ -6,7 +6,7 @@ url: "https://sodaapps.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 site_logo: "/assets/images/Soda Apps.png"
-meta_logo: "/assets/Soda Apps - Meta.png"
+meta_logo: "/assets/images/meta_img.png"
 
 permalink: "/:title"
 
