@@ -8,6 +8,20 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <!-- page title -->
 		<title>{% if page.title %} {{ page.title }} {% else %} {{ site.title }} {% endif %}</title>
+		<meta name="title" content="{{ site.title }}">
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="{{ site.url }}">
+		<meta property="og:title" content="{{ site.title }}">
+		<meta property="og:description" content="{{ site.description }}">
+		<meta property="og:image" content="{{ site.url }}">
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="{{ site.url }}">
+		<meta property="twitter:title" content="{{ site.title }}">
+		<meta property="twitter:description" content="{{ site.description }}">
+		<meta property="twitter:image" content="{{ site.url }}">
 		<!-- Favicon Icon -->
     	<link rel="shortcut icon" href="{{relative_url}}/assets/images/favicon.ico" type="image/png">
 		<!-- All css -->
